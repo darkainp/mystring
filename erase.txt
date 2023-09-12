@@ -1,0 +1,22 @@
+String String::assign(int n, const char ch)
+{
+	//Input validation
+	if (n < 0)
+	{
+		cout << "Invalid amount of times!" << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	//Reset original string
+	delete[] value;
+	value = nullptr;
+	
+	value = new char[n + 1];	//Pointer to new char array
+
+	//Assign ch to original String n times.
+	for (int i = 0; i < n; i++)
+		value[i] = ch;
+	//Add null terminator at the end of new Val
+	value[n] = '\0';
+	return value;
+}
